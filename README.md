@@ -1,0 +1,1 @@
+# NotKayitSistemi.GenericRepository
