@@ -12,7 +12,6 @@ namespace Business.Concrete
         {
             _siniflarDerslerDal = siniflarDerslerDal;
         }
-
         public List<SiniflarDersler> SinifinDersleri(int sinifID)
         {
             return _siniflarDerslerDal.GetAllOf(x => x.SinifID == sinifID);

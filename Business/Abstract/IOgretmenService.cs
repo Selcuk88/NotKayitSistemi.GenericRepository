@@ -17,8 +17,6 @@ namespace Business.Abstract
         Ogretmen OgretmenGetir(string TcNo);
         List<Ogretmen> OgretmenKadrosuListele();        
         List<Ogretmen> DersinOgretmenleri(int dersId);
-
-       
-        IResult OgretmeniSinifaGorevlendir(Ogretmen gorevlendirilecekOgretmen, Sinif gorevlendirilecekSinif);
+        IResult Ogretmenmi(string TcNo, string Sifre);
     }
 }

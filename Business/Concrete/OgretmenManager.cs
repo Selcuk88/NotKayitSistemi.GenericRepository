@@ -14,9 +14,7 @@ namespace Business.Concrete
         {
             _ogretmenDal = ogretmenDal;
         }
-
         
-
         public List<Ogretmen> DersinOgretmenleri(int dersId)
         {
             return _ogretmenDal.GetAllOf(x => x.Brans.DersID == dersId);
@@ -59,20 +57,26 @@ namespace Business.Concrete
         {
             return _ogretmenDal.GetAllOf();
         }
-        
+
+        public IResult Ogretmenmi(string TcNo, string Sifre)
+        {
+            Ogretmen ogretmen = this.OgretmenKadrosuListele().Find(x => x.TcNo == TcNo && x.Sifre == Sifre);
+            if (ogretmen != null)
+            {
+                return new SuccessDataResult<Ogretmen>(ogretmen, "Giriş başaralı.");
+            }
+            else
+            {
+                return new ErrorResult("Giriş bilgileriniz hatalı.\nLütfen tekrar deneyiniz.");
+            }            
+        }
+
         public IResult OgretmenSil(Ogretmen ogretmen)
         {
             _ogretmenDal.Delete(ogretmen);
             return new SuccessResult($"{ogretmen.OgretmenAd} {ogretmen.OgretmenSoyad} isimli öğretmenin kaydı başarılı şekilde silinmiştir.");
         }
 
-        public IResult OgretmeniSinifaGorevlendir(Ogretmen gorevlendirilecekOgretmen, Sinif gorevlendirilecekSinif)
-        {
-
-           
-            
-           
-            return new SuccessResult();
-        }
+        
     }
 }

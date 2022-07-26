@@ -159,7 +159,7 @@ namespace UIArayuz
             // dersAçKapatToolStripMenuItem
             // 
             this.dersAçKapatToolStripMenuItem.Name = "dersAçKapatToolStripMenuItem";
-            this.dersAçKapatToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.dersAçKapatToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dersAçKapatToolStripMenuItem.Text = "Ders Aç-Kapat";
             this.dersAçKapatToolStripMenuItem.Click += new System.EventHandler(this.dersAçKapatToolStripMenuItem_Click);
             // 
@@ -337,7 +337,7 @@ namespace UIArayuz
             // dgvSinifSubeBazindeVeriler
             // 
             this.dgvSinifSubeBazindeVeriler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSinifSubeBazindeVeriler.Location = new System.Drawing.Point(7, 76);
+            this.dgvSinifSubeBazindeVeriler.Location = new System.Drawing.Point(10, 73);
             this.dgvSinifSubeBazindeVeriler.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvSinifSubeBazindeVeriler.Name = "dgvSinifSubeBazindeVeriler";
             this.dgvSinifSubeBazindeVeriler.RowHeadersWidth = 51;

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Entities.Concrete;
 
 namespace Business.Abstract
 {
     public interface IBasariService
     {
+        public Basari OgrencininBasarisi(int ogrenciID, int dersID);
+        public void BasariEkle(Basari basari);
+        public void BasariGuncelle(Basari basari);
     }
 }

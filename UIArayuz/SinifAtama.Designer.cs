@@ -94,6 +94,7 @@
             this.btnGorevlendirmeyiSil.TabIndex = 14;
             this.btnGorevlendirmeyiSil.Text = "Görevlendirmeyi Sil";
             this.btnGorevlendirmeyiSil.UseVisualStyleBackColor = true;
+            this.btnGorevlendirmeyiSil.Click += new System.EventHandler(this.btnGorevlendirmeyiSil_Click);
             // 
             // btnGorevlendirmeyiOnayla
             // 

@@ -37,5 +37,12 @@ namespace Business.Concrete
         {
             return _siniflarOgretmenlerDal.GetAllOf(x => x.OgretmenID == ogretmen.OgretmenID);
         }
+
+        public IResult SinifGorevlendirmesiniSil(Sinif sinif, Ogretmen ogretmen)
+        {            
+            _siniflarOgretmenlerDal.Delete(new SiniflarOgretmenler { SinifID=sinif.SinifID,OgretmenID=ogretmen.OgretmenID });
+
+            return new SuccessResult($"{ogretmen.OgretmenAd} {ogretmen.OgretmenSoyad} isimli öğretmenin {sinif.Seviye}-{sinif.Sube} sınıfında ki görevi sonlandırılmıştır.");
+        }
     }
 }
