@@ -3,11 +3,7 @@ using Core.Results.Abstract;
 using Core.Results.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
@@ -49,18 +45,23 @@ namespace Business.Concrete
             return _ogrenciDal.Get(x => x.TcNo == ogrenciTcNo);
         }
 
-        public bool OgrenciBilgiKontrol(string TcNo, string Sifre, out Ogrenci ogrenci)
+        public IResult OgrenciMi(string TcNo, string Sifre)
         {
-            ogrenci= _ogrenciDal.Get(x => x.TcNo == TcNo && x.Sifre == Sifre);
-            if (ogrenci==null)
+            Ogrenci ogrenci = _ogrenciDal.Get(x => x.TcNo == TcNo && x.Sifre == Sifre);
+            if (ogrenci != null)
             {
-                return false;
+                return new SuccessDataResult<Ogrenci>(ogrenci, "Giriş başaralı.");
             }
             else
             {
-                return true;
+                return new ErrorResult("Giriş bilgileriniz hatalı.\nLütfen tekrar deneyiniz.");
             }
-        }       
+        }
+
+        public List<Ogrenci> TumOgrenciler()
+        {
+            return _ogrenciDal.GetAllOf();
+        }
 
         public IResult Update(Ogrenci ogrenci)
         {

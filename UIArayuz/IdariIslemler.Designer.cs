@@ -94,7 +94,7 @@ namespace UIArayuz
             this.kayıtSilmeToolStripMenuItem,
             this.sınıfAtamaToolStripMenuItem});
             this.öğretmenİşlemleriToolStripMenuItem1.Name = "öğretmenİşlemleriToolStripMenuItem1";
-            this.öğretmenİşlemleriToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.öğretmenİşlemleriToolStripMenuItem1.Size = new System.Drawing.Size(219, 26);
             this.öğretmenİşlemleriToolStripMenuItem1.Text = "Öğretmen İşlemleri";
             // 
             // kayıtAlmaGüncellemeToolStripMenuItem
@@ -122,7 +122,7 @@ namespace UIArayuz
             this.öğrenciİşlemleriToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kayıtAlmaGüncellemeSilmeToolStripMenuItem1});
             this.öğrenciİşlemleriToolStripMenuItem1.Name = "öğrenciİşlemleriToolStripMenuItem1";
-            this.öğrenciİşlemleriToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.öğrenciİşlemleriToolStripMenuItem1.Size = new System.Drawing.Size(219, 26);
             this.öğrenciİşlemleriToolStripMenuItem1.Text = "Öğrenci İşlemleri";
             // 
             // kayıtAlmaGüncellemeSilmeToolStripMenuItem1
@@ -137,7 +137,7 @@ namespace UIArayuz
             this.sınıfİşlemleriToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sınıfAçToolStripMenuItem});
             this.sınıfİşlemleriToolStripMenuItem1.Name = "sınıfİşlemleriToolStripMenuItem1";
-            this.sınıfİşlemleriToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.sınıfİşlemleriToolStripMenuItem1.Size = new System.Drawing.Size(219, 26);
             this.sınıfİşlemleriToolStripMenuItem1.Text = "Sınıf İşlemleri";
             this.sınıfİşlemleriToolStripMenuItem1.Click += new System.EventHandler(this.sınıfİşlemleriToolStripMenuItem1_Click);
             // 
@@ -153,13 +153,13 @@ namespace UIArayuz
             this.dersİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dersAçKapatToolStripMenuItem});
             this.dersİşlemleriToolStripMenuItem.Name = "dersİşlemleriToolStripMenuItem";
-            this.dersİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dersİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
             this.dersİşlemleriToolStripMenuItem.Text = "Ders İşlemleri";
             // 
             // dersAçKapatToolStripMenuItem
             // 
             this.dersAçKapatToolStripMenuItem.Name = "dersAçKapatToolStripMenuItem";
-            this.dersAçKapatToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dersAçKapatToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
             this.dersAçKapatToolStripMenuItem.Text = "Ders Aç-Kapat";
             this.dersAçKapatToolStripMenuItem.Click += new System.EventHandler(this.dersAçKapatToolStripMenuItem_Click);
             // 
@@ -362,6 +362,7 @@ namespace UIArayuz
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NOT KAYIT SİSTEMİ - Müdür Paneli";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.IdariIslemler_FormClosing);
+            this.Load += new System.EventHandler(this.IdariIslemler_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

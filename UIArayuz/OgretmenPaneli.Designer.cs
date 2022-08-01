@@ -402,11 +402,11 @@
             this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(17, 190);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(424, 57);
+            this.label12.Size = new System.Drawing.Size(428, 57);
             this.label12.TabIndex = 0;
             this.label12.Text = "Öğrencinin mevcut notlarında güncelleme yapmak istiyorsanız\r\nlistelenen notlara ç" +
     "ift tıklayınız. Notun kayda geçebilmesi için\r\nverilecek puan en az 1 olmalıdır, " +
-    "0 olarak puan girişi yapılamaz.";
+    "0 olarak puan kaydı yapılamaz.";
             // 
             // label6
             // 

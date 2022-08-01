@@ -14,6 +14,7 @@ namespace Business.Abstract
         public IResult SinifaOgretmenGorevlendir(int sinifID, int ogretmenID);
         public bool OgretmenSiniftaGorevlimi(int sinifID, int ogretmenID);
         public List<SiniflarOgretmenler> OgretmeninSiniflari(Ogretmen ogretmen);
+        public List<SiniflarOgretmenler> SinifinOgretmenleri(int sinifId);
         public IResult SinifGorevlendirmesiniSil(Sinif sinif, Ogretmen ogretmen);
     }
 }

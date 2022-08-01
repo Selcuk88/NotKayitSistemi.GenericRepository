@@ -15,6 +15,7 @@ namespace Business.Abstract
         IResult OgretmenGuncelle(Ogretmen ogretmen);
         IResult OgretmenSil(Ogretmen ogretmen);
         Ogretmen OgretmenGetir(string TcNo);
+        Ogretmen OgretmenGetir(int ogretmenId);
         List<Ogretmen> OgretmenKadrosuListele();        
         List<Ogretmen> DersinOgretmenleri(int dersId);
         IResult Ogretmenmi(string TcNo, string Sifre);

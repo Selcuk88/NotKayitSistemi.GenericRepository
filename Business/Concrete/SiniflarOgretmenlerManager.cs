@@ -44,5 +44,10 @@ namespace Business.Concrete
 
             return new SuccessResult($"{ogretmen.OgretmenAd} {ogretmen.OgretmenSoyad} isimli öğretmenin {sinif.Seviye}-{sinif.Sube} sınıfında ki görevi sonlandırılmıştır.");
         }
+
+        public List<SiniflarOgretmenler> SinifinOgretmenleri(int sinifId)
+        {
+            return _siniflarOgretmenlerDal.GetAllOf(x => x.SinifID == sinifId);
+        }
     }
 }

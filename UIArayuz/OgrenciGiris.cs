@@ -1,14 +1,9 @@
 ﻿using Business.Concrete;
+using Core.Results.Abstract;
+using Core.Results.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UIArayuz
@@ -22,6 +17,7 @@ namespace UIArayuz
 
         OgrenciManager ogrenciManager = new OgrenciManager(new EfOgrenciDal());
         SinifManager sinifManager = new SinifManager(new EfSinifDal());
+        Ogrenci ogrenci;
 
         private void OgrenciGiris_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -37,11 +33,15 @@ namespace UIArayuz
 
         private void btnOgrenciGiris_Click(object sender, EventArgs e)
         {
-            if (ogrenciManager.OgrenciBilgiKontrol(mtxtOgrenciTc.Text,txtOgrenciSifre.Text,out Ogrenci ogrenci))
+            IResult sonuc = ogrenciManager.OgrenciMi(mtxtOgrenciTc.Text, txtOgrenciSifre.Text);
+            if (sonuc.Success)
             {
-                MessageBox.Show("Giriş başarılı.","Sistem Mesajı",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                OgrenciPaneli ogrenciPaneli = new OgrenciPaneli();
+                MessageBox.Show(sonuc.Message,"Sistem Mesajı",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                OgrenciPaneli ogrenciPaneli = new OgrenciPaneli();                
+                ogrenci = ((SuccessDataResult<Ogrenci>)sonuc).Data;
+                ogrenciPaneli.Tag = ogrenci;
                 ogrenciPaneli.Show();
+
                 foreach (Control item in ogrenciPaneli.Controls)
                 {
                     if (item.Name=="gbOgrenciBilgileri")
@@ -67,7 +67,7 @@ namespace UIArayuz
             }
             else
             {
-                MessageBox.Show("Giriş bilgileriniz hatalı.\nLütfen tekrar deneyiniz.", "Sistem Uyarısı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(((ErrorResult)sonuc).Message, "Sistem Uyarısı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

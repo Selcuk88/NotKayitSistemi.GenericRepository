@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
+using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
+
 
 namespace UIArayuz
 {
@@ -16,6 +17,11 @@ namespace UIArayuz
         {
             InitializeComponent();
         }
+
+        SinifManager sinifManager = new SinifManager(new EfSinifDal());
+        OgrenciManager ogrenciManager=new OgrenciManager(new EfOgrenciDal());
+        short toplamKapasite;
+        
 
         private void kayıtAlmaGüncellemeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -69,6 +75,27 @@ namespace UIArayuz
 
         private void sınıfİşlemleriToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void IdariIslemler_Load(object sender, EventArgs e)
+        {            
+            foreach (Sinif sinif in sinifManager.TumSiniflariListele())
+            {
+                toplamKapasite += sinif.Kapasite;
+            }
+
+            lblToplamKapasite.Text = toplamKapasite.ToString();
+            prbToplamKapasite.Value= toplamKapasite;
+
+            lblToplamOgrenciSayisi.Text = ogrenciManager.TumOgrenciler().Count.ToString();
+            prbToplamOgrenciSayisi.Value = ogrenciManager.TumOgrenciler().Count;
+
+            lblErkekOgrenciSayisi.Text = ogrenciManager.TumOgrenciler().Where(x => x.Cinsiyet == "Erkek").Count().ToString();
+            lblKizOgrenciSayisi.Text=ogrenciManager.TumOgrenciler().Where(x=>x.Cinsiyet=="Kadın").Count().ToString();
+
+            prbErkekOgrenciSayisi.Value = ogrenciManager.TumOgrenciler().Where(x => x.Cinsiyet == "Erkek").Count();
+            prbKizOgrenciSayisi.Value = ogrenciManager.TumOgrenciler().Where(x => x.Cinsiyet == "Kadın").Count();
 
         }
     }

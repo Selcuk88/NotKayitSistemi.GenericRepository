@@ -47,6 +47,11 @@ namespace Business.Concrete
             return _ogretmenDal.Get(x => x.TcNo == TcNo);
         }
 
+        public Ogretmen OgretmenGetir(int ogretmenId)
+        {
+            return _ogretmenDal.Get(x => x.OgretmenID == ogretmenId);
+        }
+
         public IResult OgretmenGuncelle(Ogretmen ogretmen)
         {
             _ogretmenDal.Update(ogretmen);

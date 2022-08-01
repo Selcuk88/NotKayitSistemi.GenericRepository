@@ -15,7 +15,7 @@ namespace Business.Abstract
         IResult Update(Ogrenci ogrenci);
         Ogrenci GetByTcNo(string ogrenciTcNo);
         List<Ogrenci> AyniSiniftakiOgrenciler(int sinifId);
-        bool OgrenciBilgiKontrol(string TcNo, string Sifre, out Ogrenci ogrenci);
-           
+        IResult OgrenciMi(string TcNo, string Sifre);
+        List<Ogrenci> TumOgrenciler();
     }
 }
